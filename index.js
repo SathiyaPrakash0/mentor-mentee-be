@@ -11,7 +11,11 @@ const {mentorsAll, mentorsNew, mentor, mentorFilter, mentorFilterExp, mentorFilt
 const app = express();
 
 // middleware configurations
-app.use(cors());
+app.use(cors({
+    origin: ["https://mentor-mentee-fe.onrender.com/"],
+    methods: ["POST", "GET"],
+    credentials: true
+}));
 app.use(express.json());
 
 // routers
